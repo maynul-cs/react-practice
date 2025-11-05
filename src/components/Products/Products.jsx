@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Product from '../Product/Product';
 
-const Products = () => {
+const Products = ({addToCartData}) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -11,12 +11,13 @@ const Products = () => {
     }, [])
 
   return (
-    <div style={{ margin: '20px', padding: '20px', gridTemplateColumns: 'repeat(3, 1fr)', display: 'grid', gap: '20px' }}>
+    <div className='grid grid-cols-3 gap-8'>
         {
             products.map(product => <Product 
                 key={product.id}
                 product={product} 
-            ></Product> )
+                addToCartData = {addToCartData}
+            ></Product>)
         }
 
     </div>
