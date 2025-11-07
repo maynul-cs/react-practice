@@ -1,23 +1,27 @@
-import React, { useState } from 'react'
-import Products from './components/Products/Products'
+import React from 'react'
 import './App.css'
-import Placement from './components/Placement/Placement';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <h1> I'm Home page! </h1>
+  },
+  {
+    path: '/about',
+    element: <h1> I'm About page! </h1>
+  },
+  {
+    path: '/blog',
+    element: <h1> I'm Blog page! </h1>
+  }  
+]);
+
 
 const App = () => {
-
-  const [cart, setCart] = useState([]);
-
-   const addToCartData = (product) => {
-        const newCart = [...cart, product];
-        setCart(newCart);
-       
-   }
-
   return (
-    <div className='flex gap-x-6'>
-      <Products addToCartData = {addToCartData} />
-      <Placement cart = {cart} />
-    </div>
+    <RouterProvider router={router} />
   )
 }
 
