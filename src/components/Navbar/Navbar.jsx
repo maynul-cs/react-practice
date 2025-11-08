@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 const Navbar = () => {
   return (
-    <div className='bg-red-600 text-center text-white p-4 space-x-4'>
+    <div className='bg-red-600 text-center text-white p-4 space-x-4 mb-5'>
         
         <Link to="/home"> Home </Link>
         <Link to="/products"> Product </Link>
