@@ -1,17 +1,10 @@
 import React from 'react'
-import './App.css'
-import Navbar from './components/Navbar/Navbar';
-import { Outlet } from 'react-router';
-import Footer from './components/Footer/Footer';
-
-
+import ConditionalStyle from './components/ConditionalStyle/ConditionalStyle'
 
 const App = () => {
   return (
-    <div>    
-      <Navbar />
-      <Outlet/>
-      <Footer />
+    <div>
+      <ConditionalStyle />
     </div>
   )
 }
