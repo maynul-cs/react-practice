@@ -1,20 +1,15 @@
-import { createContext, useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
-
-
-export const CountContext = createContext();
+import { Context1Provider } from './Contexts/Contexts';
 
 const App = () => {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-        <CountContext.Provider value={count}>
+    <div> 
+        <Context1Provider>
             <Navbar />
-            <button onClick={() => setCount(count + 1)}> App Count: {count} </button>
-        </CountContext.Provider>
+        </Context1Provider> 
     </div>
   )
 }
 
-export default App
+export default App;

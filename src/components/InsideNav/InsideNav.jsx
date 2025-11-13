@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
 import LastNav from '../LastNav/LastNav'
-import { CountContext } from '../../App'
+import { Context1 } from '../../Contexts/Contexts'
+
+
 
 const InsideNav = () => {
-    const countState = useContext(CountContext);
+    const [a, setA] = useContext(Context1);
 
   return (
     <div>
         <LastNav />
-        <button> InsideNav Count: {countState} </button>
+        <button> Count-2: {a} </button>
     </div>
   )
 }
