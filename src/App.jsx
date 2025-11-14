@@ -1,15 +1,13 @@
-import Navbar from './components/Navbar/Navbar'
-import { Context1Provider } from './Contexts/Contexts';
+import SubmitForm from "./components/SubmitForm/SubmitForm";
+
 
 const App = () => {
 
   return (
     <div> 
-        <Context1Provider>
-            <Navbar />
-        </Context1Provider> 
+         <SubmitForm />
     </div>
   )
-}
+} 
 
 export default App;
