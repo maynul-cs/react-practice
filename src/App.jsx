@@ -1,12 +1,30 @@
-import React from 'react'
-import Counter1 from './components/Counter1/Counter1';
-import Counter2 from './components/Counter2/Counter2';
+import React, { useMemo, useState } from 'react'
+
 const App = () => {
+  const [plus, setPlus] = useState(0);
+  const [minus, setMinus] = useState(20);
+
+  const handlePlus = () => {
+    setPlus(plus + 1);
+  };
+
+  const handleMinus = () => {
+    setMinus(minus - 1);
+  };
+
+  const checking = useMemo(() => {
+    console.log('Checking...');
+    for (let i = 0; i < 100000000; i++) {
+    } //
+    return plus % 2 === 0;
+  }, [plus]);
+
 
   return (
     <div> 
-         <Counter1 />
-          <Counter2 />
+          <h3> Checking: {checking ? 'Even' : 'Odd'} </h3>
+         <button onClick={handlePlus}> Plus: {plus} </button>
+         <button onClick={handleMinus}> Minus: {minus} </button>
     </div>
   )
 } 
