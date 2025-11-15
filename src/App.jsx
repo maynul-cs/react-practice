@@ -1,11 +1,12 @@
-import SubmitForm from "./components/SubmitForm/SubmitForm";
-
-
+import React from 'react'
+import Counter1 from './components/Counter1/Counter1';
+import Counter2 from './components/Counter2/Counter2';
 const App = () => {
 
   return (
     <div> 
-         <SubmitForm />
+         <Counter1 />
+          <Counter2 />
     </div>
   )
 } 
