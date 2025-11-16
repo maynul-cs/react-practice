@@ -1,26 +1,29 @@
-import { useCallback, useState } from 'react'
-import AnotherOne from './components/AnotherOne/AnotherOne';
+import { useReducer } from 'react'
 
 const App = () => {
-  const [increase, setIncrease] = useState(0);
-  const [decrease, setDecrease] = useState(20);
+  const initialValue = 10;
 
-  const nextOne = useCallback(() => {
-    //console.log('Hello App');
-  }, []);
+  const reducer = (state, action) => {
+    if(action === 'plus'){
+      return state + 1;
+    }
+    else if(action === 'minus'){
+      return state - 1;
+    }
+    else{
+      return state;
+    }
+  }
 
-  // const nextOne = () => {
-  //   //console.log('Hello App');
-  // }
+  const [count, dispatch] = useReducer(reducer, initialValue);
 
- 
 
   return (
     <div> 
-        <AnotherOne nextOne={nextOne} />
-         <button onClick={() => setIncrease(increase + 1)}> Increase: {increase} </button>
+        <h1> {count} </h1>
+        <button onClick={() => dispatch('plus')}> Increment </button>
          <hr />
-         <button onClick={() => setDecrease(decrease - 1)}> Decrease: {decrease} </button>
+         <button onClick={() => dispatch('minus')}> Decrement </button>
     </div>
   )
 } 
